@@ -12,7 +12,7 @@ function pigLatin(word) {
   //newWord = newWord.toLowerCase();
   let newWord = firstVowel(word);
   if (newWord > 0) {
-    return word.slice(newWord) + word.slice(0, firstVowel) + "ay";
+    return word.slice(newWord) + word.slice(0, newWord) + "ay";
   }
   return word + "way";
 }
@@ -26,6 +26,7 @@ function firstVowel(word) {
 }
 
 pigLatin("purple");
+console.log(pigLatin("purple"));
 
 function getPrompt() {
   rl.question("word ", answer => {
