@@ -8,13 +8,17 @@ const rl = readline.createInterface({
 });
 
 function pigLatin(word) {
-  //let newWord = word.trim();
-  //newWord = newWord.toLowerCase();
-  let newWord = firstVowel(word);
-  if (newWord > 0) {
-    return word.slice(newWord) + word.slice(0, newWord) + "ay";
+  let trimmedWord = word.trim();
+  let loweredWord = trimmedWord.toLowerCase();
+  let firstVowelPosition = firstVowel(loweredWord);
+  if (firstVowelPosition > 0) {
+    return (
+      loweredWord.slice(firstVowelPosition) +
+      loweredWord.slice(0, firstVowelPosition) +
+      "ay"
+    );
   }
-  return word + "way";
+  return loweredWord + "way";
 }
 
 function firstVowel(word) {
