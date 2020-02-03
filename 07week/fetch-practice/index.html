@@ -12,12 +12,25 @@
 
     <!-- When you click this button the posts collected from the fetch request will be displayed below in the ul element with the id='all-posts' -->
     <button onclick="displayPost()">Display Posts</button>
-    <button onclick="fivePosts()">Fetch 5 Posts</button>
+    <button onclick="getFive()">Fetch 5 Posts</button>
+    <button onclick="displayFive()">Display 5 Posts</button>
     <button onclick="comments()">Fetch Comments</button>
     <button onclick="users()">Fetch Users</button>
     <div>
       <h3>All Posts</h3>
       <ul id="all-posts"></ul>
+    </div>
+    <div>
+      <h3>Five Posts</h3>
+      <ul id="five-posts"></ul>
+    </div>
+    <div>
+      <h3>Comments</h3>
+      <ul id="comment-list"></ul>
+    </div>
+    <div>
+      <h3>Users</h3>
+      <ul id="user-list"></ul>
     </div>
     <script src="./main.js"></script>
   </body>

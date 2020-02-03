@@ -1,0 +1,55 @@
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap");
+
+body {
+  background: darkgray;
+  font-family: "Josefin Sans", "sans-serif";
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-areas:
+    "imgOne main imgTwo "
+    "imgOne translator imgTwo";
+  font-size: large;
+}
+
+img {
+  width: 400px;
+  height: 400px;
+}
+
+.imgOne {
+  grid-area: imgOne;
+}
+
+#piggie1 {
+  transform: scaleX(-1);
+}
+
+.imgTwo {
+  grid-area: imgTwo;
+}
+
+.main {
+  grid-area: main;
+  text-align: center;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.translator {
+  grid-area: translator;
+  text-align: center;
+}
+
+#boxTwo {
+  margin-top: 20px;
+}
+
+#translatedWord {
+  font-size: x-large;
+  color: pink;
+  text-shadow: 1px 1px black;
+}
+
+button {
+  background: lightgreen;
+}

@@ -7,6 +7,14 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
+function handleClick() {
+  var input = document.getElementById("word");
+  let word = input.value;
+  let translation = pigLatin(word);
+  let translatedWord = document.getElementById("translatedWord");
+  translatedWord.innerText = translation;
+}
+
 function pigLatin(word) {
   let trimmedWord = word.trim();
   let loweredWord = trimmedWord.toLowerCase();
@@ -28,9 +36,6 @@ function firstVowel(word) {
     }
   }
 }
-
-pigLatin("purple");
-console.log(pigLatin("purple"));
 
 function getPrompt() {
   rl.question("word ", answer => {
