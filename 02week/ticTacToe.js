@@ -37,15 +37,44 @@ function horizontalWin() {
 }
 
 function verticalWin() {
-  // Your code here
+  for (let i = 0; i <= 2; i++) {
+    if (
+      board[0][i] == board[1][i] &&
+      board[1][i] == board[2][i] &&
+      board[0][i] != ""
+    ) {
+      return true;
+    }
+  }
+  return false;
 }
 
 function diagonalWin() {
-  // Your code here
+  for (let i = 0; i <= 2; i++) {
+    if (
+      (board[0][0] == board[1][1] && board[1][1] == board[2][2]) ||
+      (board[0][2] == board[1][1] && board[1][1] == board[2][0])
+    ) {
+      return true;
+    }
+    return false;
+  }
 }
 
 function checkForWin() {
-  // Your code here
+  let winner = null;
+  if (horizontalWin() === true) {
+    winner = board[i][0];
+    console.log(winner, "wins!");
+  } else if (verticalWin() === true) {
+    winner = board[0][i];
+    console.log(winner, "wins!");
+  } else if (diagonalWin() === true) {
+    winner = board[1][1];
+    console.log(winner, "wins!");
+  } else {
+    return false;
+  }
 }
 //accept the row and column user wants to mark
 //place the appropriate mark
@@ -56,6 +85,12 @@ function checkForWin() {
 //make sure to switch the player turn variable before you return from the function but after you print message
 function ticTacToe(row, column) {
   board[row][column] = playerTurn;
+  checkForWin();
+  if (playerTurn == "X") {
+    playerTurn == "O";
+  } else {
+    playerTurn == "X";
+  }
 }
 
 function getPrompt() {
