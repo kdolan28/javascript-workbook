@@ -62,19 +62,10 @@ function diagonalWin() {
 }
 
 function checkForWin() {
-  let winner = null;
-  if (horizontalWin() === true) {
-    winner = board[i][0];
-    console.log(winner, "wins!");
-  } else if (verticalWin() === true) {
-    winner = board[0][i];
-    console.log(winner, "wins!");
-  } else if (diagonalWin() === true) {
-    winner = board[1][1];
-    console.log(winner, "wins!");
-  } else {
-    return false;
-  }
+  if (horizontalWin() || verticalWin() || diagonalWin()) {
+    console.log("Player " + playerTurn + " wins");
+    return true;
+  } else return false;
 }
 //accept the row and column user wants to mark
 //place the appropriate mark
@@ -87,9 +78,9 @@ function ticTacToe(row, column) {
   board[row][column] = playerTurn;
   checkForWin();
   if (playerTurn == "X") {
-    playerTurn == "O";
+    playerTurn = "O";
   } else {
-    playerTurn == "X";
+    playerTurn = "X";
   }
 }
 
